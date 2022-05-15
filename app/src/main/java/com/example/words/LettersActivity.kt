@@ -6,10 +6,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.words.adapter.LetterAdapter
 import com.example.words.data.Datasource
 
-class MainActivity : AppCompatActivity() {
+class LettersActivity : AppCompatActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    setContentView(R.layout.activity_main)
+    setContentView(R.layout.activity_letters)
 
     val myDataset = Datasource().loadLetters()
     val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)

@@ -1,12 +1,14 @@
 package com.example.words.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.recyclerview.widget.RecyclerView
 import com.example.words.R
+import com.example.words.WordsActivity
 
 class LetterAdapter(
   private val context: Context,
@@ -26,6 +28,11 @@ class LetterAdapter(
   override fun onBindViewHolder(holder: LetterViewHolder, position: Int) {
     val item = dataset[position]
     holder.button.text = item.toString()
+    holder.button.setOnClickListener {
+      val intent = Intent(context, WordsActivity::class.java)
+      intent.putExtra("letter", holder.button.text[0])
+      context.startActivity(intent)
+    }
   }
 
   override fun getItemCount(): Int = dataset.size
