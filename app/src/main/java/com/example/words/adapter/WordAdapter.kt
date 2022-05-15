@@ -1,12 +1,15 @@
 package com.example.words.adapter
 
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.recyclerview.widget.RecyclerView
 import com.example.words.R
+import com.example.words.WordsActivity
 
 class WordAdapter(
   private val context: Context,
@@ -24,7 +27,13 @@ class WordAdapter(
   }
 
   override fun onBindViewHolder(holder: WordViewHolder, position: Int) {
-    holder.button.text = dataset[position]
+    val item = dataset[position]
+    holder.button.text = item
+    holder.button.setOnClickListener {
+      val queryUrl: Uri = Uri.parse("${WordsActivity.SEARCH_PREFIX}${item}")
+      val intent = Intent(Intent.ACTION_VIEW, queryUrl)
+      context.startActivity(intent)
+    }
   }
 
   override fun getItemCount(): Int = dataset.size
