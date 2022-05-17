@@ -119,7 +119,7 @@ class Datasource {
       "waist\n" +
       "wait\n" +
       "waiter\n" +
-      "X-ray\n" +
+      "x-ray\n" +
       "yard\n" +
       "year\n" +
       "zero\n" +
