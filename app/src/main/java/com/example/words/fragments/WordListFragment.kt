@@ -8,9 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.example.words.adapter.WordAdapter
 import com.example.words.data.Datasource
-import com.example.words.databinding.FragmentLetterListBinding
 import com.example.words.databinding.FragmentWordListBinding
-import com.example.words.fragments.WordListFragment.Companion.LETTER
 
 class WordListFragment : Fragment() {
   companion object {
@@ -21,7 +19,15 @@ class WordListFragment : Fragment() {
   private var _binding: FragmentWordListBinding? = null
   private val binding get() = _binding!!
   private lateinit var recyclerView: RecyclerView
+  private lateinit var letterId: String
 
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+
+    arguments?.let {
+      letterId = it.getString(LETTER).toString()
+    }
+  }
 
   override fun onCreateView(
     inflater: LayoutInflater, container: ViewGroup?,
@@ -33,8 +39,7 @@ class WordListFragment : Fragment() {
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     recyclerView = binding.wordsRecyclerView
-    val letterId = activity?.intent?.extras?.getChar(LETTER)
-    val myDataset = Datasource().loadWords(letterId ?: 'a')
+    val myDataset = Datasource().loadWords(letterId[0])
     recyclerView.adapter = WordAdapter(this.requireContext(), myDataset)
   }
 
