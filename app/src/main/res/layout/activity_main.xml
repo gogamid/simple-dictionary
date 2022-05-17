@@ -5,11 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="8dp"
-    tools:context=".WordsActivity">
+    tools:context=".MainActivity">
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/words_recycler_view"
+        android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="8dp"

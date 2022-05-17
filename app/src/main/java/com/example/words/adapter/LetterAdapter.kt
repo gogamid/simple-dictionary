@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.recyclerview.widget.RecyclerView
 import com.example.words.R
-import com.example.words.WordsActivity
 
 class LetterAdapter(
   private val context: Context,
@@ -29,9 +28,9 @@ class LetterAdapter(
     val item = dataset[position]
     holder.button.text = item.toString()
     holder.button.setOnClickListener {
-      val intent = Intent(context, WordsActivity::class.java)
-      intent.putExtra(WordsActivity.LETTER, holder.button.text[0])
-      context.startActivity(intent)
+//      val intent = Intent(context, WordsActivity::class.java)
+//      intent.putExtra(WordListFragment.LETTER, holder.button.text[0])
+//      context.startActivity(intent)
     }
   }
 
