@@ -61,7 +61,7 @@ class LetterListFragment : Fragment() {
     } else {
       recyclerView.layoutManager = GridLayoutManager(context, 4)
     }
-    recyclerView.adapter = LetterAdapter(this.requireContext(), myDataset)
+    recyclerView.adapter = LetterAdapter(myDataset)
   }
 
   override fun onDestroyView() {

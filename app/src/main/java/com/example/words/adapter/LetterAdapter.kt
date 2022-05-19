@@ -1,7 +1,6 @@
 package com.example.words.adapter
 
 import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +11,6 @@ import com.example.words.R
 import com.example.words.fragments.LetterListFragmentDirections
 
 class LetterAdapter(
-  private val context: Context,
   private val dataset: List<Char>
 ) : RecyclerView.Adapter<LetterAdapter.LetterViewHolder>() {
 

@@ -11,11 +11,9 @@ import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.contrib.RecyclerViewActions
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.example.words.adapter.LetterAdapter
 import com.example.words.fragments.LetterListFragment
 import org.junit.Assert.assertEquals
 import org.junit.Before
-
 import org.junit.Test
 import org.junit.runner.RunWith
 
@@ -27,7 +25,7 @@ import org.junit.runner.RunWith
  */
 @RunWith(AndroidJUnit4::class)
 class NavigationComponentTests {
-  lateinit var navController: TestNavHostController
+  private lateinit var navController: TestNavHostController
   private lateinit var letterListScenario: FragmentScenario<LetterListFragment>
 
   @Before
